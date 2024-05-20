@@ -111,7 +111,10 @@ class neuralnet(object):
         return self.sigmoid(x)*(1-self.sigmoid(x))
 
     def plot(self):
-        fig = plt.scatter(self.epochs, self.trainResult)
-        fig = plt.scatter(self.epochs, self.testResult)
+        fig = plt.scatter(self.epochs, self.trainResult, color='green', alpha=0.8, label='Train')
+        fig = plt.scatter(self.epochs, self.testResult, color='magenta', alpha=0.8, label='Test')
+        plt.title("Acurácia para cada Epoch", fontsize=14)
+        plt.xlabel('Epochs')
+        plt.legend(loc='lower right')
         return fig
         
